@@ -8,6 +8,15 @@ const secondEl = document.querySelector('.second');
 const startBtn = document.getElementById('start');
 const stopBtn = document.getElementById('stop');
 
+startBtn.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevents page refresh
+    startTimer();
+});
+
+stopBtn.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevents page refresh
+    stopTimer();
+});
 function updateTime() {
     let hrs = Math.floor(seconds / 3600);
     let mins = Math.floor((seconds % 3600) / 60);
@@ -24,7 +33,7 @@ function startTimer() {
         timer = setInterval(() => {
             seconds++;
             updateTime();
-        }, 1000);
+        }, 0);
     }
 }
 
