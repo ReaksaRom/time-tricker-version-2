@@ -33,7 +33,7 @@ function startTimer() {
         timer = setInterval(() => {
             seconds++;
             updateTime();
-        }, 0);
+        }, 1000);
     }
 }
 
